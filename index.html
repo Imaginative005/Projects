@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/styles.css">
-</head>
-<body>
-<div class="wrapper">
-    <div class="top">
-        <div class="title"><h1>My Blog</h1></div>
-    </div>
+{% extends 'base.html' %}
+{% block title %}Coffee and Wifi{% endblock %}
 
-    {% for post in all_posts: %}
-    <div class="content">
-        <div class="card ">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.subtitle }}</p>
-            <a href="{{ url_for('show_post', index=post.id) }}">Read</a>
-        </div>
-
-    </div>
-    {% endfor %}
-
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">☕️ Coffee & Wifi 💻</h1>
+  <p class="lead">Want to work in a cafe but need power and wifi?</p>
+  <hr class="my-4">
+  <p>You've found the right place! Checkout my collection of cafes with data on power socket availability, wifi speed and coffee quality.</p>
+  <a class="btn btn-warning btn-lg" href="#" role="button">Show Me!</a>
 </div>
-</body>
-<footer>
-    <p>Made with ♥️ in London.</p>
-</footer>
-</html>
+    </div>
+
+{% endblock %}
